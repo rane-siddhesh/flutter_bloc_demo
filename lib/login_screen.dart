@@ -3,7 +3,7 @@ import 'package:bloc_demo/bloc/login/login_event.dart';
 import 'package:bloc_demo/bloc/login/login_state.dart';
 import 'package:bloc_demo/dashboard_screen.dart';
 import 'package:bloc_demo/models/login_req_model.dart';
-import 'package:bloc_demo/widgets/button_widget.dart';
+import 'package:bloc_demo/widgets/views.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,6 +40,14 @@ class LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  void onSaveData(String value, bool isPassword) {
+    if (isPassword) {
+      _password = value;
+    } else {
+      _username = value;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget loadingUI = Container(
@@ -66,101 +74,15 @@ class LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(height: 100),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Username",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
+                CustomText(title: "Username"),
                 SizedBox(height: 10),
-                TextFormField(
-                  initialValue: "emilys",
-                  textInputAction: TextInputAction.next,
-                  cursorColor: Colors.white,
-                  cursorErrorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    floatingLabelBehavior: FloatingLabelBehavior.never,
-                    fillColor: Color(0xff141414),
-                    filled: true,
-                    hint: Text(
-                      "Username",
-                      style: TextStyle(color: Color(0xff4a4a4a)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(
-                        color: Color(0xff141414),
-                        width: 0,
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(
-                        color: Color(0xff141414),
-                        width: 0,
-                      ),
-                    ),
-                  ),
-                  onSaved: (value) {
-                    _username = value!;
-                  },
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Please enter valid username";
-                    }
-                    return null;
-                  },
-                ),
+                CustomTextfield(onSaveClick: (value) {
+                  onSaveData(value, false);
+                }, isPassword: false,),
                 SizedBox(height: 20),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Password",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
+                CustomText(title: "Password"),
                 SizedBox(height: 10),
-                TextFormField(
-                  initialValue: "emilyspass",
-                  cursorColor: Colors.white,
-                  cursorErrorColor: Colors.white,
-                  textInputAction: TextInputAction.done,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hint: Text(
-                      "Password",
-                      style: TextStyle(color: Color(0xff4a4a4a)),
-                    ),
-                    filled: true,
-                    fillColor: Color(0xff141414),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide(color: Color(0xff141414)),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide(color: Color(0xff141414)),
-                    ),
-                  ),
-                  obscureText: true,
-                  onSaved: (value) {
-                    _password = value!;
-                  },
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Please enter valid password";
-                    }
-                    return null;
-                  },
-                ),
+                CustomTextfield(onSaveClick: (value) {onSaveData(value, true);}, isPassword: true),
                 SizedBox(height: 30),
                 ButtonWidget(onSignInClick: onSignInClick),
               ],
