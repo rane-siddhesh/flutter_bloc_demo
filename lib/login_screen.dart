@@ -33,7 +33,8 @@ class LoginScreenState extends State<LoginScreen> {
         password: _password,
       );
 
-      bloc.add(LoginReqEvent(loginReqModel: loginReqModel));
+      // bloc.add(LoginReqEvent(loginReqModel: loginReqModel));
+      context.read<LoginBloc>().add(LoginReqEvent(loginReqModel: loginReqModel));
     }
   }
 
