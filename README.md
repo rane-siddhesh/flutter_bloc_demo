@@ -1,17 +1,9 @@
 # bloc_demo
 
-A new Flutter project.
+Key Contributions in the Project:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Implemented BLoC for efficient state management.
+2. Used dotenv for managing environment-specific configurations.
+3. Built reusable custom views for better UI structure.
+4. Integrated APIs using Dio.
+5. Followed Clean Architecture principles for a scalable and maintainable codebase
