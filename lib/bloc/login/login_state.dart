@@ -1,4 +1,4 @@
-import 'package:bloc_demo/models/login_res_model.dart';
+import 'package:bloc_demo/models/login/login_res_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class LoginState extends Equatable {}

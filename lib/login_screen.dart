@@ -2,7 +2,7 @@ import 'package:bloc_demo/bloc/login/login_bloc.dart';
 import 'package:bloc_demo/bloc/login/login_event.dart';
 import 'package:bloc_demo/bloc/login/login_state.dart';
 import 'package:bloc_demo/dashboard_screen.dart';
-import 'package:bloc_demo/models/login_req_model.dart';
+import 'package:bloc_demo/models/login/login_req_model.dart';
 import 'package:bloc_demo/utils/local_storage.dart';
 import 'package:bloc_demo/widgets/views.dart';
 import 'package:flutter/material.dart';
