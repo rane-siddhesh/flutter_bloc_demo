@@ -3,6 +3,7 @@ import 'package:bloc_demo/bloc/login/login_event.dart';
 import 'package:bloc_demo/bloc/login/login_state.dart';
 import 'package:bloc_demo/dashboard_screen.dart';
 import 'package:bloc_demo/models/login_req_model.dart';
+import 'package:bloc_demo/utils/local_storage.dart';
 import 'package:bloc_demo/widgets/views.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -76,15 +77,23 @@ class LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 100),
                 CustomText(title: "Username"),
                 SizedBox(height: 10),
-                CustomTextfield(onSaveClick: (value) {
-                  onSaveData(value, false);
-                }, isPassword: false,),
+                CustomTextfield(
+                  onSaveClick: (value) {
+                    onSaveData(value, false);
+                  },
+                  isPassword: false,
+                ),
                 SizedBox(height: 20),
                 CustomText(title: "Password"),
                 SizedBox(height: 10),
-                CustomTextfield(onSaveClick: (value) {onSaveData(value, true);}, isPassword: true),
+                CustomTextfield(
+                  onSaveClick: (value) {
+                    onSaveData(value, true);
+                  },
+                  isPassword: true,
+                ),
                 SizedBox(height: 30),
-                ButtonWidget(onSignInClick: onSignInClick),
+                SignInButtonWidget(onSignInClick: onSignInClick),
               ],
             ),
           ),
@@ -96,6 +105,10 @@ class LoginScreenState extends State<LoginScreen> {
       body: BlocListener<LoginBloc, LoginState>(
         listener: (BuildContext context, state) {
           if (state is LoginLoadedState) {
+            LocalStorage().setValue(
+              "accessKey",
+              state.loginResModel?.accessToken ?? "",
+            );
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (ctx) => DashboardScreen()),
             );
@@ -115,9 +128,9 @@ class LoginScreenState extends State<LoginScreen> {
         },
         child: BlocBuilder<LoginBloc, LoginState>(
           builder: (BuildContext context, LoginState state) {
-            return Stack(children: [initialUI, if(state is LoginLoadingState)
-              loadingUI
-            ]);
+            return Stack(
+              children: [initialUI, if (state is LoginLoadingState) loadingUI],
+            );
           },
         ),
       ),
