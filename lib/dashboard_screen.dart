@@ -1,6 +1,8 @@
 import 'package:bloc_demo/bloc/user_details/user_bloc.dart';
 import 'package:bloc_demo/bloc/user_details/user_event.dart';
 import 'package:bloc_demo/bloc/user_details/user_state.dart';
+import 'package:bloc_demo/models/userdetails/user_details_model.dart';
+import 'package:bloc_demo/widgets/views.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,12 +27,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
       child: Center(child: CircularProgressIndicator(color: Color(0xfffe4088))),
     );
 
-    Widget dashboardUI = Container(
-      color: Color(0xff0b090a),
-      child: Center(
-        child: Text("Dashboard", style: TextStyle(color: Colors.black)),
-      ),
-    );
+    Widget getDashboardUI(UserDetailsModel model) {
+      return Container(
+        padding: EdgeInsets.all(25),
+        color: Color(0xff0b090a),
+        child: Column(
+          children: [
+            ProfileHeader(model: model,),
+            SizedBox(height: 15,),
+            PersonalDetails(model: model,)
+          ],
+        ),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -45,7 +54,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           }
 
           if (state is UserLoadedState) {
-            return dashboardUI;
+            return getDashboardUI(state.userDetailsModel!);
           }
 
           return Container();
