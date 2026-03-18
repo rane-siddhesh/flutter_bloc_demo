@@ -34,8 +34,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: Column(
           children: [
             ProfileHeader(model: model,),
-            SizedBox(height: 15,),
-            PersonalDetails(model: model,)
+            SizedBox(height: 20,),
+            PersonalDetails(model: model,),
+            SizedBox(height: 20,),
+            AddressDetails(model: model.address!,)
           ],
         ),
       );
