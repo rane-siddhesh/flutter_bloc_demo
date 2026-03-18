@@ -31,14 +31,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
       return Container(
         padding: EdgeInsets.all(25),
         color: Color(0xff0b090a),
-        child: Column(
-          children: [
-            ProfileHeader(model: model,),
-            SizedBox(height: 20,),
-            PersonalDetails(model: model,),
-            SizedBox(height: 20,),
-            AddressDetails(model: model.address!,)
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              ProfileHeader(model: model,),
+              SizedBox(height: 20,),
+              PersonalDetails(model: model,),
+              SizedBox(height: 20,),
+              AddressDetails(model: model.address!,),
+              SizedBox(height: 20,),
+              CompanyDetails(model: model.company!,)
+            ],
+          ),
         ),
       );
     }
