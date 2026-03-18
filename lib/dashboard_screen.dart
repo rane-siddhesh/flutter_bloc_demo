@@ -40,7 +40,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
               SizedBox(height: 20,),
               AddressDetails(model: model.address!,),
               SizedBox(height: 20,),
-              CompanyDetails(model: model.company!,)
+              CompanyDetails(model: model.company!,),
+              SizedBox(height: 20,),
+              CardDetails(model: model.bank!,)
             ],
           ),
         ),
