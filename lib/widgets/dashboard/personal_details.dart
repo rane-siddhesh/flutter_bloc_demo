@@ -13,7 +13,7 @@ class PersonalDetails extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Align(alignment: Alignment.topLeft, child: Text("Personal Details")),
-        SizedBox(height: 10,),
+        SizedBox(height: 10),
         Container(
           padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
@@ -29,8 +29,16 @@ class PersonalDetails extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: Row(
                         children: [
-                          Icon(Icons.email_outlined, color: Color(0xffaaaaaa),size: 20,),
-                          SizedBox(width: 5),
+                          CircleAvatar(
+                            backgroundColor: Color(0xff0b090a),
+                            radius: 16,
+                            child: Icon(
+                              Icons.email_outlined,
+                              color: Color(0xffaaaaaa),
+                              size: 16,
+                            ),
+                          ),
+                          SizedBox(width: 7),
                           Text(
                             "Email",
                             style: Theme.of(context).textTheme.bodySmall,
@@ -52,13 +60,37 @@ class PersonalDetails extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 8),
+              SizedBox(
+                height: 1,
+                width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xff1e1a19),
+                        Colors.white10,
+                        Color(0xff1e1a19),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 8),
               Row(
                 children: [
                   Expanded(
                     child: Row(
                       children: [
-                        Icon(Icons.phone_outlined, color: Color(0xffaaaaaa),size: 20,),
+                        CircleAvatar(
+                          backgroundColor: Color(0xff0b090a),
+                          radius: 16,
+                          child: Icon(
+                            Icons.phone_outlined,
+                            color: Color(0xffaaaaaa),
+                            size: 16,
+                          ),
+                        ),
                         SizedBox(width: 5),
                         Align(
                           alignment: Alignment.topLeft,
@@ -81,16 +113,36 @@ class PersonalDetails extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 8),
+              SizedBox(
+                height: 1,
+                width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xff1e1a19),
+                        Colors.white10,
+                        Color(0xff1e1a19),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 8),
               Row(
                 children: [
                   Expanded(
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.calendar_month_outlined,
-                          color: Color(0xffaaaaaa),
-                          size: 20,
+                        CircleAvatar(
+                          backgroundColor: Color(0xff0b090a),
+                          radius: 16,
+                          child: Icon(
+                            Icons.calendar_month_outlined,
+                            color: Color(0xffaaaaaa),
+                            size: 16,
+                          ),
                         ),
                         SizedBox(width: 5),
                         Align(
@@ -114,16 +166,36 @@ class PersonalDetails extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 8),
+              SizedBox(
+                height: 1,
+                width: double.infinity,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xff1e1a19),
+                        Colors.white10,
+                        Color(0xff1e1a19),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 8),
               Row(
                 children: [
                   Expanded(
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.bloodtype_outlined,
-                          color: Color(0xffaaaaaa),
-                          size: 20,
+                        CircleAvatar(
+                          backgroundColor: Color(0xff0b090a),
+                          radius: 16,
+                          child: Icon(
+                            Icons.bloodtype_outlined,
+                            color: Color(0xffaaaaaa),
+                            size: 16,
+                          ),
                         ),
                         SizedBox(width: 5),
                         Align(
