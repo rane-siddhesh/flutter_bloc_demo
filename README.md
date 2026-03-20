@@ -1,4 +1,4 @@
-# bloc_demo
+# BLoC Demo
 
 Key Contributions in the Project:
 
