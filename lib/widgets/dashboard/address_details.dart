@@ -1,5 +1,6 @@
 import 'package:bloc_demo/models/userdetails/address_details_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class AddressDetails extends StatelessWidget{
@@ -14,12 +15,12 @@ class AddressDetails extends StatelessWidget{
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Align(alignment: Alignment.topLeft, child: Text("Address Details")),
-        SizedBox(height: 10),
+        SizedBox(height: 10.h),
         Container(
           padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
             color: Color(0xff1e1a19),
-            borderRadius: BorderRadius.circular(35.0),
+            borderRadius: BorderRadius.circular(35.0.r),
           ),
           child: Column(
             children: [
@@ -32,17 +33,19 @@ class AddressDetails extends StatelessWidget{
                         children: [
                           CircleAvatar(
                             backgroundColor: Color(0xff0b090a),
-                            radius: 16,
+                            radius: 16.r,
                             child: Icon(
                               Icons.home_outlined,
                               color: Color(0xffaaaaaa),
-                              size: 16,
+                              size: 16.w,
                             ),
                           ),
                           SizedBox(width: 7),
                           Text(
                             "Street",
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 15.sp
+                            ),
                           ),
                         ],
                       ),
@@ -53,7 +56,9 @@ class AddressDetails extends StatelessWidget{
                       alignment: Alignment.topRight,
                       child: Text(
                         model.address!,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 15.sp
+                        ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -61,9 +66,9 @@ class AddressDetails extends StatelessWidget{
                   ),
                 ],
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               SizedBox(
-                height: 1,
+                height: 1.h,
                 width: double.infinity,
                 child: Container(
                   decoration: BoxDecoration(
@@ -77,7 +82,7 @@ class AddressDetails extends StatelessWidget{
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Row(
                 children: [
                   Expanded(
@@ -85,19 +90,21 @@ class AddressDetails extends StatelessWidget{
                       children: [
                         CircleAvatar(
                           backgroundColor: Color(0xff0b090a),
-                          radius: 16,
+                          radius: 16.r,
                           child: Icon(
                             Icons.location_city_outlined,
                             color: Color(0xffaaaaaa),
-                            size: 16,
+                            size: 16.w,
                           ),
                         ),
-                        SizedBox(width: 5),
+                        SizedBox(width: 5.w),
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
                             "City",
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 15.sp
+                            ),
                           ),
                         ),
                       ],
@@ -108,15 +115,17 @@ class AddressDetails extends StatelessWidget{
                       alignment: Alignment.topRight,
                       child: Text(
                         model.city!,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 15.sp
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               SizedBox(
-                height: 1,
+                height: 1.h,
                 width: double.infinity,
                 child: Container(
                   decoration: BoxDecoration(
@@ -130,7 +139,7 @@ class AddressDetails extends StatelessWidget{
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Row(
                 children: [
                   Expanded(
@@ -138,19 +147,21 @@ class AddressDetails extends StatelessWidget{
                       children: [
                         CircleAvatar(
                           backgroundColor: Color(0xff0b090a),
-                          radius: 16,
+                          radius: 16.r,
                           child: Icon(
                             Icons.location_on_outlined,
                             color: Color(0xffaaaaaa),
-                            size: 16,
+                            size: 16.w,
                           ),
                         ),
-                        SizedBox(width: 5),
+                        SizedBox(width: 5.w),
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
                             "State",
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 15.sp
+                            ),
                           ),
                         ),
                       ],
@@ -161,15 +172,17 @@ class AddressDetails extends StatelessWidget{
                       alignment: Alignment.topRight,
                       child: Text(
                         model.state!,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 15.sp
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               SizedBox(
-                height: 1,
+                height: 1.h,
                 width: double.infinity,
                 child: Container(
                   decoration: BoxDecoration(
@@ -183,7 +196,7 @@ class AddressDetails extends StatelessWidget{
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Row(
                 children: [
                   Expanded(
@@ -191,19 +204,21 @@ class AddressDetails extends StatelessWidget{
                       children: [
                         CircleAvatar(
                           backgroundColor: Color(0xff0b090a),
-                          radius: 16,
+                          radius: 16.r,
                           child: Icon(
                             Icons.pin,
                             color: Color(0xffaaaaaa),
-                            size: 16,
+                            size: 16.w,
                           ),
                         ),
-                        SizedBox(width: 5),
+                        SizedBox(width: 5.w),
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
                             "Postal Code",
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 15.sp
+                            ),
                           ),
                         ),
                       ],
@@ -214,15 +229,17 @@ class AddressDetails extends StatelessWidget{
                       alignment: Alignment.topRight,
                       child: Text(
                         model.postalCode!,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 15.sp
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               SizedBox(
-                height: 1,
+                height: 1.h,
                 width: double.infinity,
                 child: Container(
                   decoration: BoxDecoration(
@@ -236,7 +253,7 @@ class AddressDetails extends StatelessWidget{
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Row(
                 children: [
                   Expanded(
@@ -244,19 +261,21 @@ class AddressDetails extends StatelessWidget{
                       children: [
                         CircleAvatar(
                           backgroundColor: Color(0xff0b090a),
-                          radius: 16,
+                          radius: 16.r,
                           child: Icon(
                             Icons.map_outlined,
                             color: Color(0xffaaaaaa),
-                            size: 16,
+                            size: 16.w,
                           ),
                         ),
-                        SizedBox(width: 5),
+                        SizedBox(width: 5.w),
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
                             "Country",
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 15.sp
+                            ),
                           ),
                         ),
                       ],
@@ -267,7 +286,9 @@ class AddressDetails extends StatelessWidget{
                       alignment: Alignment.topRight,
                       child: Text(
                         model.country!,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 15.sp
+                        ),
                       ),
                     ),
                   ),

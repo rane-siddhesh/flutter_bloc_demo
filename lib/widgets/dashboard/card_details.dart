@@ -1,5 +1,6 @@
 import 'package:bloc_demo/models/userdetails/bank_details_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardDetails extends StatelessWidget {
   const CardDetails({super.key, required this.model});
@@ -24,13 +25,13 @@ class CardDetails extends StatelessWidget {
     return Column(
       children: [
         Align(alignment: Alignment.topLeft, child: Text("Card Details")),
-        SizedBox(height: 10),
+        SizedBox(height: 10.h),
         Container(
           width: double.infinity,
           padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
             color: Color(0xff1e1a19),
-            borderRadius: BorderRadius.circular(35.0),
+            borderRadius: BorderRadius.circular(35.0.r),
           ),
           child: Column(
             children: [
@@ -41,19 +42,19 @@ class CardDetails extends StatelessWidget {
                   color: Color(0xffaaaaaa),
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 50.h),
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
                   getFormattedCardNumber(model.cardNumber!),
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     color: Colors.white,
                     fontWeight: FontWeight.bold
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -62,12 +63,16 @@ class CardDetails extends StatelessWidget {
                     children: [
                       Text(
                         "Card Holder",
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 15.sp
+                        ),
                       ),
-                      SizedBox(height: 2),
+                      SizedBox(height: 2.h),
                       Text(
                         "Siddhesh Rane",
-                        style: Theme.of(context).textTheme.bodyMedium,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontSize: 17.sp
+                        ),
                       ),
                     ],
                   ),
@@ -76,12 +81,16 @@ class CardDetails extends StatelessWidget {
                     children: [
                       Text(
                         "Card Expiry",
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 15.sp
+                        ),
                       ),
-                      SizedBox(height: 2),
+                      SizedBox(height: 2.h),
                       Text(
                         model.cardExpire!,
-                        style: Theme.of(context).textTheme.bodyMedium,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontSize: 17.sp
+                        ),
                       ),
                     ],
                   ),

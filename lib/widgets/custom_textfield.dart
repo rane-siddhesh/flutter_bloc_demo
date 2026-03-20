@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextfield extends StatelessWidget {
   const CustomTextfield({
@@ -25,12 +26,12 @@ class CustomTextfield extends StatelessWidget {
         filled: true,
         hint: Text(isPassword ? "Password" : "Username", style: TextStyle(color: Color(0xff4a4a4a))),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          borderSide: BorderSide(color: Color(0xff141414), width: 0),
+          borderRadius: BorderRadius.all(Radius.circular(10.r)),
+          borderSide: BorderSide(color: Color(0xff141414), width: 0.w),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          borderSide: BorderSide(color: Color(0xff141414), width: 0),
+          borderRadius: BorderRadius.all(Radius.circular(10.r)),
+          borderSide: BorderSide(color: Color(0xff141414), width: 0.w),
         ),
       ),
       onSaved: (value) {

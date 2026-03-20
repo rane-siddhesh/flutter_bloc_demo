@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignInButtonWidget extends StatelessWidget{
   const SignInButtonWidget({super.key, required this.onSignInClick});
@@ -8,12 +9,12 @@ class SignInButtonWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+      margin: EdgeInsets.symmetric(vertical: 0.0.h, horizontal: 20.0.w),
       width: double.infinity,
-      height: 50,
+      height: 50.h,
       decoration: BoxDecoration(
         gradient: const LinearGradient(colors: [Color(0xffe341ef), Color(0xfffe4088)]),
-        borderRadius: BorderRadius.circular(10.0)
+        borderRadius: BorderRadius.circular(10.r)
       ),
       child: ElevatedButton(
         onPressed: onSignInClick,
@@ -21,12 +22,12 @@ class SignInButtonWidget extends StatelessWidget{
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(10.0.r),
           ),
         ),
         child: Text(
           "Sign In",
-          style: TextStyle(color: Colors.white, fontSize: 17),
+          style: TextStyle(color: Colors.white, fontSize: 17.sp),
         ),
       ),
     );

@@ -7,6 +7,7 @@ import 'package:bloc_demo/utils/local_storage.dart';
 import 'package:bloc_demo/widgets/views.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -69,30 +70,30 @@ class LoginScreenState extends State<LoginScreen> {
                 Text(
                   "Welcome",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 40.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 100),
+                SizedBox(height: 100.h),
                 CustomText(title: "Username"),
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 CustomTextfield(
                   onSaveClick: (value) {
                     onSaveData(value, false);
                   },
                   isPassword: false,
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 CustomText(title: "Password"),
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 CustomTextfield(
                   onSaveClick: (value) {
                     onSaveData(value, true);
                   },
                   isPassword: true,
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 SignInButtonWidget(onSignInClick: onSignInClick),
               ],
             ),
