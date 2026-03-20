@@ -1,5 +1,6 @@
 import 'package:bloc_demo/bloc/login/login_bloc.dart';
 import 'package:bloc_demo/bloc/user_details/user_bloc.dart';
+import 'package:bloc_demo/di/di_container.dart';
 import 'package:bloc_demo/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   await dotenv.load(fileName: '.env');
+  setUp();
   runApp(const MyApp());
 }
 
