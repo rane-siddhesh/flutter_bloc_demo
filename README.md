@@ -1,5 +1,7 @@
 # BLoC Demo
 
+![A remote image](https://raw.githubusercontent.com/felangel/bloc/master/assets/diagrams/bloc_architecture_full.png)
+
 Key Contributions in the Project:
 
 1. Implemented BLoC for efficient state management.
